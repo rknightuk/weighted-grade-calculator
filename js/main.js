@@ -6,7 +6,6 @@ weightApp.controller('CalcController', function($scope) {
 		{
 			unit_name: 'Unit',
 			assignments: [
-				{ assignment_name: '', assignment_grade: '', overall_percentage: '' },
 				{ assignment_name: '', assignment_grade: '', overall_percentage: '' }
 			]
 		}
@@ -35,7 +34,6 @@ weightApp.controller('CalcController', function($scope) {
 		$scope.units.push({
 			unit_name: 'Unit',
 			assignments: [
-				{ assignment_name: '', assignment_grade: '', overall_percentage: '' },
 				{ assignment_name: '', assignment_grade: '', overall_percentage: '' }
 			]
 		});
