@@ -1,0 +1,29 @@
+body {
+	padding-bottom: 50px;
+}
+.row {
+	max-width: 70%;
+}
+
+.grade {
+	text-align: right;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+button {
+	float: right;
+}
+
+.unit {
+	border-bottom: 1px solid black;
+	margin-bottom: 15px;
+}
+
+.unit-name {
+	font-weight: bold;
+	padding: 20px !important;
+	text-align: center !important;
+	font-size: 150% !important;
+	text-transform: uppercase;
+}

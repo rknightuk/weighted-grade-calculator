@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+	
+		<title>Weight Mark Calculator</title>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		
+		
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="almost-flat-ui.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+	</head>
+	
+	<body ng-app="weightApp" ng-controller="CalcController">
+		
+		<nav class="top-bar" data-topbar="">
+            <ul class="title-area">
+              <li class="name">
+                <h1><a href="/">Weighted Mark Calculator</a></h1>
+              </li>
+            </ul>
+
+			<section class="top-bar-section">
+				<ul class="right">
+					<li><a href="http://robblewis.me">Robb Lewis</a></li>
+					<li><a href="http://github.com/rmlewisuk/repo-name">Fork on GitHub</a></li>
+				</ul>
+			</section>
+        </nav>
+
+    	<div class="row unit" ng-repeat="unit in units">
+
+    		<input class="unit-name" type="text" ng-model="unit.unit_name"></h2>
+
+			<div class="row" ng-repeat="assignment in unit.assignments">
+
+				<div class="large-5 columns">
+					<input ng-model="assignment.assignment_name" placeholder="assignment name" type="text">
+				</div>
+
+				<div class="large-3 columns">
+					<input ng-model="assignment.assignment_grade" placeholder="grade" type="number" min="0" max="100">
+				</div>
+
+				<div class="large-3 columns">
+					<input ng-model="assignment.overall_percentage" placeholder="percentage" type="number" min="0" max="100">
+				</div>
+
+				<div class="large-1 columns">
+					<button type="button" class="button primary small alert radius" ng-click="deleteAssignment(unit, $index)">X</button>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="large-9 columns">
+				</div>	
+	          	<div class="large-3 columns">
+	          		<button type="button" class="button secondary small radius" ng-click="addAssignment(unit)">+ Add another assignment</button>
+	          	</div>
+
+			</div>
+
+			<div class="row">
+				<div class="large-7 columns">
+					<button style="float:left" type="button" class="button primary small alert radius" ng-click="deleteUnit($index)">Delete unit</button>
+				</div>
+
+				<div class="large-5 columns">
+					<p class="grade">
+						Total percentage listed: {{ calculateTotalPercent(unit) }}%<br>
+						Weighted grade: {{ calculateGrade(unit) }}%
+					</p>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<button type="button" class="button secondary radius" ng-click="addUnit()">+ Add another unit</button>
+		</div>
+
+		<script src="js/libs/jquery-2.0.0.js"></script>
+		<script src="js/libs/angular.min.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+	
+</html>
